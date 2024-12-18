@@ -1,20 +1,43 @@
-from math import sqrt
 
-#### Fonction secondaire
+"""
+Module to check for prime numbers.
+"""
+
+import math #importer sqrt
 
 
-def isprime(p):
 
-    # votre code ici
+def isprime(pr):
+    """
+    Function to check if a number is prime.
 
-    pass
+    Args:
+        pr (int): The number to be checked.
+
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """
+
+
+    if pr == 1 :
+        return False
+
+    d = int(math.sqrt(pr))
+
+    for i in range (2,d+1) :
+        if math.gcd(pr,i) != 1 :
+            return False
+
+    return True
 
 #### Fonction principale
 
 
 def main():
 
-    # vos appels à la fonction secondaire ici
+    """
+    permet d'executer d'utiliser la fonction isprime
+    """
 
     for n in range(100):
         if isprime(n):
